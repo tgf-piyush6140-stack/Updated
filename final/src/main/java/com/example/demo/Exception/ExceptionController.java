@@ -19,5 +19,10 @@ public class ExceptionController {
     {
         return "Null value not allowed";
     }
+    @ExceptionHandler(value = {NotFoundException.class})
+    public String notfoundexception()
+    {
+        return "Entity Not Found";
+    }
 
 }
