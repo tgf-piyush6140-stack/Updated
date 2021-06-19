@@ -16,23 +16,30 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public void deleteMember(int id)
+    public boolean deleteMember(MemberEntity memberEntity)
     {
-        if(memberRepository.existsById(id))
-        {
-            memberRepository.deleteById(id);
+        if(memberRepository.existsById(memberEntity.getId())) {
+            memberRepository.deleteById(memberEntity.getId());
+            return true ;
         }
+        else { return false;}
     }
-    public void addMember(MemberEntity memberEntity)
+    public boolean addMember(MemberEntity memberEntity)
     {
         memberRepository.save(memberEntity);
+        return true;
     }
-    public void updateMember(MemberEntity member)
+    public boolean updateMember(MemberEntity member)
     {
         if(memberRepository.existsById(member.getId()))
         {
         memberRepository.deleteById(member.getId());
         memberRepository.save(member);
+        return true;
+        }
+        else
+        {
+            return false;
         }
 
     }
