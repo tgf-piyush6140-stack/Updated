@@ -17,20 +17,20 @@ public class MemberController {
         return memberService.getAllMember();
     }
     @DeleteMapping("/member/delete")
-    public boolean deletemember(@RequestBody MemberEntity memberEntity)
+    public boolean deleteMember(@RequestBody MemberEntity memberEntity)
     {
         return memberService.deleteMember(memberEntity);
 
     }
 
     @PostMapping("/member/add")
-    public boolean addmember(@RequestBody  MemberEntity memberEntity)
+    public boolean addMember(@RequestBody  MemberEntity memberEntity)
     {
         return memberService.addMember(memberEntity);
     }
 
     @PutMapping("/member/update")
-    public boolean update(@RequestBody MemberEntity memberEntity)
+    public boolean updateMember(@RequestBody MemberEntity memberEntity)
     {
         return memberService.updateMember(memberEntity);
     }
